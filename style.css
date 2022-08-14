@@ -1,0 +1,45 @@
+.options-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.btn {
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 75px;
+}
+
+.btn img {
+    width: 75px;
+    height: 75px;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -webkit-transition: all .5s ease;
+}
+
+.btn img:hover {
+    filter: grayscale(0%);
+    filter: gray;
+    -webkit-filter: grayscale(0%);
+    filter: none;
+    transition: .5s ease;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.results-container {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/* .item button{
+    display: flex;
+    justify-content: space-evenly;
+} */
+
