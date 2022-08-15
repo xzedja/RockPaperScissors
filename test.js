@@ -65,18 +65,34 @@ const display = document.querySelector('p');
 //     }) 
 // });
 // playerButtons.addEventListener('click', getPlayerChoice);
-playerButtons.forEach((btn) => {
-    btn.addEventListener('click', getPlayerChoice)
-})
+
+
+// playerButtons.forEach((btn) => {
+//     btn.addEventListener('click', getPlayerChoice)
+// })
+
+
+
 // let playerInput;
 
-function getPlayerChoice(e) {
-    // let playerInput = document.getElementById('input').value.toLowerCase();
-    let playerInput = e.target.alt;
-    // console.log(playerInput.toLowerCase());
-    document.getElementById("results").innerHTML = playerInput;
-    ans = getComputerChoice();
-    console.log(ans + " " + playerInput);
-    playRound(playerInput, ans);
-    console.log("Player score: " + playerScore + "Computer Score: " + computerScore);
-}
+
+document.querySelector(".options-container").addEventListener('click', event => { 
+    if (event.target.className == "button") {
+        let playerInput = event.target.alt;
+        document.getElementById("results").innerHTML = playerInput;
+        ans = getComputerChoice();
+        console.log(ans + " " + playerInput);
+        playRound(playerInput, ans);
+        console.log("Player score: " + playerScore + "Computer Score: " + computerScore);
+    }});
+
+// function getPlayerChoice(e) {
+//     // let playerInput = document.getElementById('input').value.toLowerCase();
+//     let playerInput = e.target.alt;
+//     // console.log(playerInput.toLowerCase());
+//     document.getElementById("results").innerHTML = playerInput;
+//     ans = getComputerChoice();
+//     console.log(ans + " " + playerInput);
+//     playRound(playerInput, ans);
+//     console.log("Player score: " + playerScore + "Computer Score: " + computerScore);
+// }
