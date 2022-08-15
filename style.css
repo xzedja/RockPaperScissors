@@ -9,10 +9,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 75px;
-    height: 75px;
+    width: 300px;
+    height: 150px;
 }
 
+.scores-container {
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.player, .computer {
+    display:flex;
+    border: 1px solid #000;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+#reset {
+    visibility: hidden;
+}
+
+/* .player p {
+    text-align: center;
+    border: 1px solid #FFF111;
+    width: 100px;
+    height: 100px;
+} */
 .btn img {
     width: 75px;
     height: 75px;

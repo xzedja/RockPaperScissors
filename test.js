@@ -81,10 +81,40 @@ document.querySelector(".options-container").addEventListener('click', event => 
         let playerInput = event.target.alt;
         document.getElementById("results").innerHTML = playerInput;
         ans = getComputerChoice();
+        document.getElementById("results").innerHTML = "You chose " + playerInput + ". The computer picked " + ans + ".";
         console.log(ans + " " + playerInput);
         playRound(playerInput, ans);
+        document.getElementById("player").innerHTML = playerScore;
+        document.getElementById("computer").innerHTML = computerScore;
+        gameReset();
         console.log("Player score: " + playerScore + "Computer Score: " + computerScore);
     }});
+
+function gameReset() {
+    if ((playerScore == 5) || (computerScore == 5)) {
+        document.getElementById("reset").style.visibility = 'visible';
+    }
+}
+
+let resetButton = document.querySelector(".results-container");
+resetButton.addEventListener('click', resetGame);
+function resetGame(event) {
+    if (event.target.className == "reset") {
+        playerScore = 0;
+        computerScore = 0;
+        document.getElementById("reset").style.visibility = 'hidden';
+        document.getElementById("player").innerHTML = playerScore;
+        document.getElementById("computer").innerHTML = computerScore
+    }
+}
+
+
+// document.querySelector(".results-container").addEventListener('click', event => {
+//     if (event.target.className == "result") {
+//         playerScore == 0;
+//         computerScore == 0;
+//     }
+// });
 
 // function getPlayerChoice(e) {
 //     // let playerInput = document.getElementById('input').value.toLowerCase();
