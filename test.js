@@ -75,19 +75,49 @@ const display = document.querySelector('p');
 
 // let playerInput;
 
+imgList = {
+    "rock" : "img\\rock.jpeg",
+    "paper" : "img\\paper.jpeg",
+    "scissors": "img\\scissors.png"
+}
+// function addNewElement(computerChoice) {
+//     console.log(computerChoice);
+//     if (document.getElementById("computer-choice")) {
+//         let img = document.getElementById("computer-img");
+//         img.setAttribute("src",computerChoice);
+//     } else {
+//         let img = document.createElement("img");
+//         img.setAttribute("src", computerChoice);
+//         console.log(computerChoice);
+//         img.setAttribute("id", "computer-img");
+//         let div = document.getElementById("computer-choice");
+//         div.setAttribute("width", "75px");
+//         div.setAttribute("height", "75px");
+//         div.appendChild(img);
+//     }
+//     // } else {
+//     //     let img = document.getElementById("computer-img");
+//     //     img.src = computerChoice;
+//     // }
+// }
+
 
 document.querySelector(".options-container").addEventListener('click', event => { 
     if (event.target.className == "button") {
         let playerInput = event.target.alt;
         document.getElementById("results").innerHTML = playerInput;
         ans = getComputerChoice();
+
+        document.getElementById("display-choice").src = imgList[ans];
+        console.log("Image displaying: " + imgList[ans]);
+        // event.target.style.filter="grayscale(0%)";
         document.getElementById("results").innerHTML = "You chose " + playerInput + ". The computer picked " + ans + ".";
-        console.log(ans + " " + playerInput);
+        // console.log(ans + " " + playerInput);
         playRound(playerInput, ans);
         document.getElementById("player").innerHTML = playerScore;
         document.getElementById("computer").innerHTML = computerScore;
         gameReset();
-        console.log("Player score: " + playerScore + "Computer Score: " + computerScore);
+        // console.log("Player score: " + playerScore + "Computer Score: " + computerScore);
     }});
 
 function gameReset() {
@@ -98,16 +128,19 @@ function gameReset() {
 
 let resetButton = document.querySelector(".results-container");
 resetButton.addEventListener('click', resetGame);
+
 function resetGame(event) {
     if (event.target.className == "reset") {
         playerScore = 0;
         computerScore = 0;
         document.getElementById("reset").style.visibility = 'hidden';
         document.getElementById("player").innerHTML = playerScore;
-        document.getElementById("computer").innerHTML = computerScore
+        document.getElementById("computer").innerHTML = computerScore;
+        document.getElementById("results").innerHTML = "";
+        document.getElementById("game").innerHTML = "";
+        document.getElementById("display-choice").removeAttribute("src");
     }
 }
-
 
 // document.querySelector(".results-container").addEventListener('click', event => {
 //     if (event.target.className == "result") {

@@ -1,6 +1,18 @@
+body {
+    background-color: #F6EBF4;
+    font-family: Trattatello, fantasy;
+}
+
+.header {
+    font-family: Trattatello, fantasy;
+    text-align: center;
+    font-size: 50px;
+}
+
 .options-container {
     display: flex;
     justify-content: center;
+    align-items: center;
 
 }
 
@@ -15,16 +27,21 @@
 
 .scores-container {
     display:flex;
-    justify-content: space-evenly;
+    justify-content:space-evenly;
+    align-items: center;
 }
 
-.player, .computer {
+.player, .computer, .computer-choice{
     display:flex;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     width: 100px;
     height: 100px;
     justify-content: center;
     align-items: center;
+}
+
+.player, .computer{
+    flex-direction:column;
 }
 
 #reset {
@@ -45,11 +62,26 @@
     -webkit-transition: all .5s ease;
 }
 
+.computer-choice img {
+    width: 75px;
+    height: 75px;
+    display:none;
+}
+
+.computer-choice img[src]{
+    display:block;
+    width: 75px;
+    height: 75px;
+}
+
+/* .computer-choice img[src]=""{
+    display:none;
+} */
+
 .btn img:hover {
     filter: grayscale(0%);
     filter: gray;
     -webkit-filter: grayscale(0%);
-    filter: none;
     transition: .5s ease;
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
